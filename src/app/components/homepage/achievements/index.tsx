@@ -158,6 +158,42 @@ function Achievement() {
                             září–červen | 200 hodin | cena: 66 000 Kč
                         </h2>
                     </div>
+                    
+                    {/* Základní informace */}
+                    <div className="mb-16 mt-8">
+                        <h3 className="text-3xl font-medium text-dark dark:text-white mb-8 text-center">
+                            Základní informace
+                        </h3>
+                        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                            <div className="space-y-6">
+                                <div>
+                                    <h4 className="text-xl font-semibold text-dark dark:text-white mb-3">Přínos:</h4>
+                                    <p className="text-dark/70 dark:text-white/70 leading-relaxed">
+                                        Prostřednictvím výcviku budete mít možnost prožít základní principy fungování přirozeného řádu. Ty vás budou inspirovat a budete s nimi řešit problémy v původní i současné rodině, v partnerských vztazích a v oblasti zdraví, hojnosti či peněz. Pochopíte vnímání těla, duše a ducha. Zmírníte či úplně odstraníte strachy z budoucnosti a neznáma. Najdete si ideální činnost ve svém životě, která bude souznít s vašimi postoji, ne s požadavky okolí. Najdete cestu k vám samým. Zjistíte, jak uvést do rovnováhy vaše životní role a energie, a tím se přiblížíte ke štěstí v životě. V oblasti firem začnete vnímat složitosti organizace oproti rodině a působení firem na vaše životy.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="text-xl font-semibold text-dark dark:text-white mb-3">Předpokládaný výsledek:</h4>
+                                    <p className="text-dark/70 dark:text-white/70 leading-relaxed">
+                                        Uchazeč bude mít sebevědomí postavit individuální a skupinovou konstelaci. Posune se v osobním životě a pochopí mnoho aspektů, křivd a různých situací způsobených podnikáním
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 className="text-xl font-semibold text-dark dark:text-white mb-3">Požadavky na uchazeče:</h4>
+                                <p className="text-dark/70 dark:text-white/70 leading-relaxed mb-4">
+                                    Klient u mě absolvoval minimálně 5 seminářů. Cítí důvěru v metodu a moji osobu. Je si jistý svými očekáváními, tedy co získá absolvováním kurzu od sebe, ode mě a od samotné metody. Dokáže rozpoznat pohnutku, proč chce zahájit výcvik, a napsat o tom volným stylem.
+                                </p>
+                                <p className="text-dark/70 dark:text-white/70 leading-relaxed">
+                                    Vaše očekávání a důvod, proč chcete absolvovat výcvik, napište do žádosti na e-mail:{' '}
+                                    <a href="mailto:jan.krejcirik@shifting.cz" className="text-primary hover:underline font-medium">
+                                        jan.krejcirik@shifting.cz
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
                     {awards.map((award, index) => (
                         <div key={index} className="grid grid-cols-12 gap-4 border-b border-dark/10 dark:border-white/10 py-16 items-start" >
                             {/* Index & Icon */}
