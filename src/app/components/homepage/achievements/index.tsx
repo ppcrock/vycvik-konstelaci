@@ -4,6 +4,19 @@ import { motion, useInView } from "motion/react";
 import { useRef } from 'react';
 
 function Achievement() {
+    const sectionAccents = [
+        { border: 'border-l-primary', bg: 'bg-primary/5 dark:bg-primary/10', num: 'text-primary' },
+        { border: 'border-l-indigo-500', bg: 'bg-indigo-500/5 dark:bg-indigo-500/10', num: 'text-indigo-600 dark:text-indigo-400' },
+        { border: 'border-l-violet-500', bg: 'bg-violet-500/5 dark:bg-violet-500/10', num: 'text-violet-600 dark:text-violet-400' },
+        { border: 'border-l-purple-500', bg: 'bg-purple-500/5 dark:bg-purple-500/10', num: 'text-purple-600 dark:text-purple-400' },
+        { border: 'border-l-fuchsia-500', bg: 'bg-fuchsia-500/5 dark:bg-fuchsia-500/10', num: 'text-fuchsia-600 dark:text-fuchsia-400' },
+        { border: 'border-l-pink-500', bg: 'bg-pink-500/5 dark:bg-pink-500/10', num: 'text-pink-600 dark:text-pink-400' },
+        { border: 'border-l-rose-500', bg: 'bg-rose-500/5 dark:bg-rose-500/10', num: 'text-rose-600 dark:text-rose-400' },
+        { border: 'border-l-amber-500', bg: 'bg-amber-500/5 dark:bg-amber-500/10', num: 'text-amber-600 dark:text-amber-400' },
+        { border: 'border-l-emerald-500', bg: 'bg-emerald-500/5 dark:bg-emerald-500/10', num: 'text-emerald-600 dark:text-emerald-400' },
+        { border: 'border-l-teal-500', bg: 'bg-teal-500/5 dark:bg-teal-500/10', num: 'text-teal-600 dark:text-teal-400' },
+    ];
+
     const awards = [
         {
             id: '01',
@@ -194,16 +207,18 @@ function Achievement() {
                         </div>
                     </div>
                     
-                    {awards.map((award, index) => (
-                        <div key={index} className="grid grid-cols-12 gap-4 border-b border-dark/10 dark:border-white/10 py-16 items-start" >
+                    {awards.map((award, index) => {
+                        const accent = sectionAccents[index] ?? sectionAccents[0];
+                        return (
+                        <div key={index} className={`grid grid-cols-12 gap-4 border-b border-dark/10 dark:border-white/10 py-16 items-start pl-4 -ml-4 border-l-4 rounded-r ${accent.border} ${accent.bg}`}>
                             {/* Index & Icon */}
                             <div className="col-span-2 sm:col-span-1 flex items-start gap-3">
-                                <span className="text-3xl font-medium text-dark dark:text-white">{award.id}</span>
+                                <span className={`text-3xl font-medium ${accent.num}`}>{award.id}</span>
                             </div>
 
                             <div className="col-span-2 sm:col-span-1 flex items-start gap-3">
-                                <div className="text-dark dark:text-white flex items-center justify-center">
-                                    <Icon icon={award.icon} width={40} height={40} className="text-dark dark:text-white" strokeWidth={1.5} />
+                                <div className={`flex items-center justify-center ${accent.num}`}>
+                                    <Icon icon={award.icon} width={40} height={40} className="currentColor" strokeWidth={1.5} />
                                 </div>
                             </div>
 
@@ -225,7 +240,7 @@ function Achievement() {
                                 <h5 className="text-dark/60 dark:text-white/60 sm:text-xl text-lg font-normal">{award.description}</h5>
                             </div>
                         </div>
-                    ))}
+                    ); })}
                 </div>
             </div>
         </section>

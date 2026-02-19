@@ -1,113 +1,22 @@
 import { NextResponse } from "next/server";
 
 const headerData = [
-    { label: 'About us', href: '/aboutus' },
-    { label: 'Services', href: '/services' },
-    { label: 'Work', href: '/work' },
-    { label: 'Team', href: '/team' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Contact', href: '/contact' },
-    {
-        label: 'Pages',
-        href: '#',
-        submenu: [
-            {
-                label: "Pages",
-                type: "group",
-                links: [
-                    { label: 'About us', href: '/aboutus' },
-                    { label: 'Services', href: '/services' },
-                    { label: 'Work', href: '/work' },
-                    { label: 'Team', href: '/team' },
-                    { label: 'Pricing', href: '/pricing' },
-                    { label: 'Contact', href: '/contact' },
-                ],
-            },
-            {
-                label: "T&C",
-                type: "group",
-                links: [
-                    { name: "Privacy Policy", url: "/privacy-policy" },
-                    { name: "Term of service", url: "/terms-and-conditions" },
-                    { name: "Documentation", url: "/documentation" }
-                ],
-            },
-            {
-                label: "Website",
-                type: "group",
-                links: [
-                    { name: "Get NextJs Templates", url: "https://getnextjstemplates.com/" }
-                ]
-            }
-        ]
-    },
+    { label: 'O mně', href: '/aboutus' },
+    { label: 'Služby', href: '/services' },
+    { label: 'Kontakt', href: '/contact' },
 ];
 
 const footerData = {
     brand: {
-        name: "Optura",
-        tagline: "Empowering businesses with innovative solutions. Let's create something amazing together.",
-        socialLinks: [
-            {
-                icon: "/images/home/footerSocialIcon/twitter.svg",
-                dark_icon: "/images/home/footerSocialIcon/twitter_dark.svg",
-                link: "https://twitter.com"
-            },
-            {
-                icon: "/images/home/footerSocialIcon/linkedin.svg",
-                dark_icon: "/images/home/footerSocialIcon/linkedin_dark.svg",
-                link: "https://linkedin.com/in"
-            },
-            {
-                icon: "/images/home/footerSocialIcon/dribble.svg",
-                dark_icon: "/images/home/footerSocialIcon/dribble_dark.svg",
-                link: "https://dribbble.com"
-            },
-            {
-                icon: "/images/home/footerSocialIcon/instagram.svg",
-                dark_icon: "/images/home/footerSocialIcon/instagram_dark.svg",
-                link: "https://instagram.com"
-            }
-        ]
+        name: "Výcvik konstelací",
     },
-    menu: {
-        name: "Menu",
-        links: [
-            { name: 'About us', url: '/aboutus' },
-            { name: 'Services', url: '/services' },
-            { name: 'Work', url: '/work' },
-            { name: 'Team', url: '/team' },
-            { name: 'Pricing', url: '/pricing' },
-        ]
-    },
-    support: {
-        name: "Support",
-        links: [
-            { name: "Contact us", url: "/contact" },
-            { name: "About us", url: "/aboutus" },
-            { name: "Work", url: "/work" },
-            { name: "Services", url: "/services" },
-            { name: "Pricing", url: "/pricing" },
-        ]
-    },
-    socials: {
-        name: "Socials",
-        links: [
-            { name: "Twitter", url: "https://twitter.com/wrappixel", icon: "tabler:brand-x" },
-            { name: "Linkedin", url: "https://www.linkedin.com/company/wrappixel/", icon: "tabler:brand-linkedin" },
-            { name: "Dribbble", url: "https://dribbble.com/wrappixel", icon: "tabler:brand-dribbble" },
-            { name: "Instagram", url: "https://www.instagram.com/wrappixel", icon: "tabler:brand-instagram" },
-        ]
-    },
-    terms: {
-        name: "T&C",
-        links: [
-            { name: "Privacy Policy", url: "/privacy-policy" },
-            { name: "Term of service", url: "/terms-and-conditions" },
-            { name: "Documentation", url: "/documentation" }
-        ]
-    },
-    copyright: "©2025 Optura. All Rights Reserved"
+    socialLinks: [
+        { name: "Facebook", url: "https://www.facebook.com/onlinekonstelace", icon: "tabler:brand-facebook" },
+        { name: "LinkedIn", url: "https://www.linkedin.com/in/jankrejcirik/", icon: "tabler:brand-linkedin" },
+        { name: "Instagram", url: "https://www.instagram.com/onlinekonstelace", icon: "tabler:brand-instagram" },
+        { name: "YouTube", url: "https://www.youtube.com/@onlinekonstelace", icon: "tabler:brand-youtube" },
+    ],
+    copyright: "©2026 Výcvik konstelací"
 };
 
 const ServiceData = [

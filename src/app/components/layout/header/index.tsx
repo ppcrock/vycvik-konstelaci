@@ -5,7 +5,6 @@ import { signOut, useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import HeaderLink from './Navigation/HeaderLink'
 import MobileHeader from './Navigation/MobileHeader'
-import Announcement from './Announcement'
 import Logo from './Logo'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -69,7 +68,6 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                     ? 'backdrop-blur-xs bg-white/90 dark:bg-dark/90'
                     : ''
                     } ${className}`}>
-                <Announcement />
                 <div className={`container mx-auto px-4`}>
                     <nav className={`flex items-center py-3 justify-between`}>
                         <Logo />
