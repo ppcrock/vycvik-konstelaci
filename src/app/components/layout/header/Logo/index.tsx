@@ -10,7 +10,7 @@ const Logo: React.FC = () => {
             <Image
                 src="/images/logo/vycvik-konstelaci-logo.png"
                 alt="Výcvik konstelací"
-                width={220}
+                width={320}
                 height={40}
                 className="dark:hidden"
                 priority
@@ -18,7 +18,7 @@ const Logo: React.FC = () => {
             <Image
                 src="/images/logo/vycvik-konstelaci-logo-white.png"
                 alt="Výcvik konstelací"
-                width={220}
+                width={320}
                 height={40}
                 className="hidden dark:block"
                 priority
