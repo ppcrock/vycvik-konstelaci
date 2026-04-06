@@ -124,40 +124,40 @@ function Achievement() {
         },
         {
             id: '09',
-            title: 'Pracovní, firemní a organizační konstelace 1',
+            title: 'Konstelace traumatu',
             city: 'BRNO',
             dates: [
                 { day: 'Pátek', date: '7. 5. 2027', time: '10:00-18:00' },
                 { day: 'Sobota', date: '8. 5. 2027', time: '9:00-18:00' },
                 { day: 'Neděle', date: '9. 5. 2027', time: '9:00-12:00' },
             ],
-            icon: "tabler:chart-bar",
+            icon: "tabler:heart-broken",
             description:
-                'Zaměření: Základní principy fungování firem a organizací dle přirozeného řádu',
+                'Zaměření: Práce s traumatem v rodinném systému. Jak se předčasná úmrtí, války, ztráty a vyloučení přenášejí na další generace. Rozpoznání traumatických vzorců a jejich uvolnění pomocí konstelační metody',
         },
         {
             id: '10',
-            title: 'Pracovní, firemní a organizační konstelace 2',
+            title: 'Podnikatelské, firemní a organizační konstelace',
             city: 'BRNO',
             dates: [
                 { day: 'Pátek', date: '4. 6. 2027', time: '10:00-18:00' },
                 { day: 'Sobota', date: '5. 6. 2027', time: '9:00-18:00' },
                 { day: 'Neděle', date: '6. 6. 2027', time: '9:00-12:00' },
             ],
-            icon: "tabler:trending-up",
+            icon: "tabler:building",
             description:
-                'Zaměření: Nejčastější problematika ve firmách, spory mezi majiteli, opakující se vzorce, konkurence, problémy rodinných firem a spolupracujících členů v jedné firmě. Loajalita zaměstnanců, firemní kultura a principy vedení firem dle přirozeného řádu',
+                'Zaměření: Principy fungování firem a organizací dle přirozeného řádu. Spory mezi majiteli, opakující se vzorce, problémy rodinných firem. Loajalita zaměstnanců, firemní kultura a vedení podle systémových zákonů',
         },
     ];
     const sectionRef = useRef(null);
-    const inView = useInView(sectionRef)
+    const inView = useInView(sectionRef, { once: true })
     const bottomAnimation = (index: any) => ({
         initial: { y: '5%', opacity: 0 },
         animate: inView ? { y: 0, opacity: 1 } : { y: '10%', opacity: 0 },
         transition: { duration: 0.4, delay: 0.4 + index * 0.3 },
     })
     return (
-        <section>
+        <section id="program" className="scroll-mt-24" ref={sectionRef}>
             <div className="relative before:absolute before:h-3/4 before:w-full before:bg-linear-to-r before:from-cyan-gradient before:via-white before:to-purple-gradient dark:before:from-dark-cyan-gradient dark:before:via-black dark:before:to-dark-purple-gradient dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10 before:rounded-full before:top-24 before:blur-3xl before:-z-10">
                 <div className='container mx-auto px-4'>
                     <div className='flex justify-center text-center py-4 relative'>
@@ -197,16 +197,32 @@ function Achievement() {
                                 <p className="text-dark/70 dark:text-white/70 leading-relaxed mb-4">
                                     Klient u mě absolvoval minimálně 5 seminářů. Cítí důvěru v metodu a moji osobu. Je si jistý svými očekáváními, tedy co získá absolvováním kurzu od sebe, ode mě a od samotné metody. Dokáže rozpoznat pohnutku, proč chce zahájit výcvik, a napsat o tom volným stylem.
                                 </p>
-                                <p className="text-dark/70 dark:text-white/70 leading-relaxed">
-                                    Vaše očekávání a důvod, proč chcete absolvovat výcvik, napište do žádosti na e-mail:{' '}
-                                    <a href="mailto:jan.krejcirik@shifting.cz" className="text-primary hover:underline font-medium">
-                                        jan.krejcirik@shifting.cz
+                                <div className="mt-6">
+                                    <a
+                                        href="#prihlaska"
+                                        onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('prihlaska')?.scrollIntoView({ behavior: 'smooth' }) }}
+                                        className="cursor-pointer inline-flex items-center justify-center bg-[#024ca2] text-white font-semibold text-base py-3 px-8 rounded-full border border-[#024ca2] transition-all duration-200 ease-in-out hover:bg-transparent hover:text-[#024ca2] active:opacity-90">
+                                        Mám zájem o výcvik
                                     </a>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
+                    <div id="program-vycviku" className='flex justify-center text-center py-4 relative mb-8 scroll-mt-24'>
+                        <motion.h2
+                            initial={{ y: 30, opacity: 0 }}
+                            animate={inView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
+                            Program výcviku{' '}
+                            <span className='instrument-font italic font-normal dark:text-white/70'>
+                                rodinných a firemních konstelací
+                            </span>
+                        </motion.h2>
+                    </div>
+
+                    <div className="max-w-5xl mx-auto">
                     {awards.map((award, index) => {
                         const accent = sectionAccents[index] ?? sectionAccents[0];
                         return (
@@ -236,11 +252,12 @@ function Achievement() {
                             </div>
 
                             {/* Description */}
-                            <div className="col-span-12 lg:col-span-4">
-                                <h5 className="text-dark/60 dark:text-white/60 sm:text-xl text-lg font-normal">{award.description}</h5>
+                            <div className="col-span-12 lg:col-span-4 pr-8">
+                                <p className="text-dark/60 dark:text-white/60 text-base font-normal leading-relaxed">{award.description}</p>
                             </div>
                         </div>
                     ); })}
+                    </div>
                 </div>
             </div>
         </section>

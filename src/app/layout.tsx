@@ -8,8 +8,11 @@ import { Inter_Tight } from "next/font/google";
 export const metadata: Metadata = {
   title: "Výcvik konstelací",
   icons: {
-    icon: [{ url: "/favicon.png", type: "image/png", sizes: "192x192" }],
-    apple: "/favicon.png",
+    icon: [
+      { url: "/web-app-manifest-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/web-app-manifest-512x512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/web-app-manifest-192x192.png",
   },
 };
 const font = Inter_Tight({ subsets: ["latin"] });
