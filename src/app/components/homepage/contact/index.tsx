@@ -38,19 +38,19 @@ export default function Contact() {
               </div>
               <ul className="flex flex-col gap-4">
                 <li className="flex items-center justify-center md:justify-start gap-3">
-                  <Phone className="flex-shrink-0 w-5 h-5 text-primary" aria-hidden />
+                  <Phone className="flex-shrink-0 w-5 h-5 text-[#024ca2]" aria-hidden />
                   <Link href="tel:+420724714188" className="text-lg hover:underline">
                     +420 724 714 188
                   </Link>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-3">
-                  <Mail className="flex-shrink-0 w-5 h-5 text-primary" aria-hidden />
+                  <Mail className="flex-shrink-0 w-5 h-5 text-[#024ca2]" aria-hidden />
                   <Link href="mailto:jan.krejcirik@shifting.cz" className="text-lg hover:underline">
                     jan.krejcirik@shifting.cz
                   </Link>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-3">
-                  <MapPin className="flex-shrink-0 w-5 h-5 text-primary" aria-hidden />
+                  <MapPin className="flex-shrink-0 w-5 h-5 text-[#024ca2]" aria-hidden />
                   <span className="text-lg">
                     Masarykova 37, 602 00 Brno
                     <br />
