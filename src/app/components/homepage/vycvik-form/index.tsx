@@ -5,12 +5,12 @@ import { stagger, useAnimate, useInView } from 'motion/react'
 type FormState = 'form' | 'loading' | 'error' | 'success'
 
 const POHNUTKY = [
-  { value: 'a', label: 'Chci být profesionální průvodce konstelací, dělat metodu aktivně a sloužit většímu množství lidí', nadstavba: 'Bude doplněno – nadstavba pro profesionální průvodce: jak pracovat s klientelou, jak si klientelu vytvořit, marketing, praxe.' },
-  { value: 'b', label: 'Příležitostně dělat konstelace pro rodinu a známé, ale moje hlavní činnost to nikdy nebude', nadstavba: 'Bude doplněno – nadstavba pro příležitostné organizátory: jak připravit seminář pro blízké, základy facilitace.' },
-  { value: 'c', label: 'Chci si vylepšit svůj vlastní život – principy přirozeného řádu mě fascinují a uvědomuji si, že výcvik je intenzivnější než klasický seminář', nadstavba: 'Bude doplněno – nadstavba pro osobní rozvoj: hloubkové práce se sebou, individuální mentoring.' },
-  { value: 'd', label: 'Jsem majitel firmy a pomocí těchto metod chci vést a inspirovat firmu a svůj byznys', nadstavba: 'Bude doplněno – nadstavba pro podnikatele: firemní konstelace, systemické vedení týmů, rozhodování.' },
-  { value: 'e', label: 'V současné době dělám již jinou metodu (Kraniosakrální terapie, EFT, atd.) a metodu konstelací chci přidat k mé současné metodě', nadstavba: 'Bude doplněno – nadstavba pro kombinující terapeuty: integrace konstelací do jiných metod, synergie přístupů.' },
-  { value: 'f', label: 'Jsem tvůrce autentického léčebného kanálu, mám už jiné výcviky a chci jen doplnit přírodní zákony do mého A.L.K.', nadstavba: 'Bude doplněno – nadstavba pro autentické léčitele: přírodní zákony jako základ, propojení s existujícím výcvikem.' },
+  { value: 'a', label: 'Chci být profesionální průvodce konstelací, dělat metodu aktivně a sloužit většímu množství lidí', nadstavba: 'Je možnost absolvovat nadstavbové školení, které probíhá formou praxe. Dostanete k dispozici učebnu, za symbolický poplatek, můžete zde stavět konstelace a trénovat. Abyste získali praxi do začátku. Měl/a byste o tuto nabídku zájem?' },
+  { value: 'b', label: 'Příležitostně dělat konstelace pro rodinu a známé, ale moje hlavní činnost to nikdy nebude', nadstavba: 'I když se aktivně nebudete zaměřovat na klientelu, tak mě můžete mít jako mentora. Před seminářem vás můžu znovu připravit nebo vás navést.' },
+  { value: 'c', label: 'Chci si vylepšit svůj vlastní život – principy přirozeného řádu mě fascinují a uvědomuji si, že výcvik je intenzivnější než klasický seminář', nadstavba: 'Jde se do větších hloubek a nedá se to srovnávat s běžným seminářem pro klienty, protože zde je rozdílná připravenost.' },
+  { value: 'd', label: 'Jsem majitel firmy a pomocí těchto metod chci vést a inspirovat firmu a svůj byznys', nadstavba: '' },
+  { value: 'e', label: 'V současné době dělám již jinou metodu (Kraniosakrální terapie, EFT, atd.) a metodu konstelací chci přidat k mé současné metodě', nadstavba: '' },
+  { value: 'f', label: 'Jsem tvůrce autentického léčebného kanálu, mám už jiné výcviky a chci jen doplnit přírodní zákony do mého A.L.K.', nadstavba: '' },
 ] as const
 
 const LOKACE_OPTIONS = [
@@ -177,9 +177,9 @@ export default function VycvikForm() {
                   </div>
                 )}
               </div>
-              {selectedPohnutky.length > 0 && (
+              {selectedPohnutky.some(p => p.nadstavba) && (
                 <div className="mt-3 flex flex-col gap-2">
-                  {selectedPohnutky.map(p => (
+                  {selectedPohnutky.filter(p => p.nadstavba).map(p => (
                     <div key={p.value} className="px-3.5 py-2.5 rounded-lg bg-primary/5 dark:bg-primary/10 border border-primary/15 dark:border-primary/20">
                       <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-0.5">Nadstavba {p.value.toUpperCase()}</p>
                       <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{p.nadstavba}</p>
