@@ -77,21 +77,36 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                                     { label: 'Přihláška', href: '#prihlaska', primary: true },
                                     { label: 'O mně', href: '#pruvodce', primary: false },
                                     { label: 'Program výcviku', href: '#program-vycviku', primary: false },
+                                    { label: 'Reference', href: '/reference', primary: false },
                                     { label: 'Kontakt', href: '#kontakt', primary: false },
-                                ].map((item) => (
-                                    <li key={item.label}>
-                                        <a
-                                            href={item.href}
-                                            onClick={(e) => { e.preventDefault(); document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' }) }}
-                                            className={`cursor-pointer font-semibold text-sm flex items-center justify-center py-2 px-5 rounded-full transition-all duration-200 ease-in-out whitespace-nowrap ${
-                                                item.primary
-                                                    ? 'bg-[#024ca2] text-white hover:bg-[#024ca2]/90'
-                                                    : 'text-dark/70 dark:text-white/70 hover:text-dark dark:hover:text-white hover:bg-dark/5 dark:hover:bg-white/10'
-                                            }`}>
-                                            {item.label}
-                                        </a>
-                                    </li>
-                                ))}
+                                ].map((item) => {
+                                    const cls = `cursor-pointer font-semibold text-sm flex items-center justify-center py-2 px-5 rounded-full transition-all duration-200 ease-in-out whitespace-nowrap ${
+                                        item.primary
+                                            ? 'bg-[#024ca2] text-white hover:bg-[#024ca2]/90'
+                                            : 'text-dark/70 dark:text-white/70 hover:text-dark dark:hover:text-white hover:bg-dark/5 dark:hover:bg-white/10'
+                                    }`
+                                    return (
+                                        <li key={item.label}>
+                                            {item.href.startsWith('#') ? (
+                                                <a
+                                                    href={item.href}
+                                                    onClick={(e) => {
+                                                        e.preventDefault()
+                                                        if (pathname === '/') {
+                                                            document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' })
+                                                        } else {
+                                                            window.location.href = '/' + item.href
+                                                        }
+                                                    }}
+                                                    className={cls}>
+                                                    {item.label}
+                                                </a>
+                                            ) : (
+                                                <Link href={item.href} className={cls}>{item.label}</Link>
+                                            )}
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </div>
                         <div className='flex items-center gap-1 xl:gap-4'>

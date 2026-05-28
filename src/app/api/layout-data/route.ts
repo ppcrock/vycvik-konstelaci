@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 
 const headerData = [
-    { label: 'O mně', href: '/aboutus' },
-    { label: 'Služby', href: '/services' },
-    { label: 'Kontakt', href: '/contact' },
+    { label: 'Přihláška', href: '/#prihlaska' },
+    { label: 'O mně', href: '/#pruvodce' },
+    { label: 'Program výcviku', href: '/#program-vycviku' },
+    { label: 'Reference', href: '/reference' },
+    { label: 'Kontakt', href: '/#kontakt' },
 ];
 
 const footerData = {
